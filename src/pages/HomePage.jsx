@@ -33,7 +33,8 @@ function HomePage() {
         "https://cc17-assessment-api.onrender.com/v1/todo?userId=32",
         data
       );
-      setTodos([response.data, ...todos]);
+      setTodos([response.data.data, ...todos]);
+      console.log(response.data);
       console.log(todos);
       setNewTodo("");
     } catch (error) {
@@ -46,7 +47,7 @@ function HomePage() {
     if (!todoId) return;
     try {
       await axios.delete(
-        `https://cc17-assessment-api.onrender.com/v1/todo/e5acdeca-198b-42ed-bcc3-a6b4f0f53dfb?userId=${todoId}`
+        `https://cc17-assessment-api.onrender.com/v1/todo/${todoId}?userId=32`
       );
       console.log("delete successs");
       setTodos((prev) => prev.filter((todo) => todo.id !== todoId));

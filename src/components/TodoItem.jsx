@@ -16,7 +16,7 @@ function TodoItem(props) {
           </p>
         </div>
         <div className="todo-list-delete">
-          <button onClick={(event) => deleteTodo(todo.todoId)}>X</button>
+          <button onClick={(event) => deleteTodo(todo.id)}>X</button>
         </div>
       </li>
     </ul>
