@@ -83,7 +83,7 @@ function HomePage() {
               <h1>My Todo</h1>
             </div>
             <div className="todo-title-img">
-              <img src="src/images/01_rocket.png" onClick={createTodo} />
+              <img src="src/images/01_rocket.png" />
             </div>
           </div>
 
@@ -94,6 +94,11 @@ function HomePage() {
               className="newTask"
               value={newTodo}
               onChange={handleChangeTodo}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  createTodo();
+                }
+              }}
               //   onKeyDown={createTodo}
             ></input>
           </label>
